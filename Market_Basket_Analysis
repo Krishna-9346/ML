@@ -1,0 +1,40 @@
+# By using Apriori, Generate rules with transactionencoder 
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+from mlxtend.preprocessing import TransactionEncoder
+
+transactions=[
+    ['Laptop', 'Mouse', 'USB Cable'],
+    ['Laptop', 'Mouse'],
+    ['Laptop', 'USB Cable'],
+    ['Mouse', 'USB Cable'],
+    ['Laptop', 'Mouse', 'USB Cable'],
+    ['Keyboard', 'Mouse'],
+    ['Laptop', 'Keyboard'],
+    ['Monitor', 'HDMI Cable'],
+    ['Laptop', 'Monitor'],
+    ['Mouse', 'USB Cable', 'HDMI Cable']
+]
+te=TransactionEncoder()
+te_array=te.fit_transform(transactions)
+df=pd.DataFrame(te_array, columns=te.columns_)
+df
+frequent_itemsets=apriori(df, min_support=0.3, use_colnames=True)
+rules=association_rules(frequent_itemsets, metric='confidence', min_threshold=0.8)
+print('Frequent Itemsets')
+print(frequent_itemsets)
+print('Association Rules')
+print(rules[['support','confidence','lift']])
+
+
+#output: Frequent Itemsets
+   support             itemsets
+0      0.6             (Laptop)
+1      0.6              (Mouse)
+2      0.5          (USB Cable)
+3      0.3      (Mouse, Laptop)
+4      0.3  (Laptop, USB Cable)
+5      0.4   (Mouse, USB Cable)
+Association Rules
+   support  confidence      lift
+0      0.4         0.8  1.333333
