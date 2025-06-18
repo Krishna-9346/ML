@@ -2,6 +2,13 @@
 
 This ML project predicts whether a movie will be a Blockbuster, Hit, Average, or Flop based on historical data such as budget, genre, cast, etc.
 
+# Requiremnts:
+pandas
+numpy
+scikit-learn
+matplotlib
+jupyter
+
 ## Project Highlights:
 - Cleaned and explored Bollywood box office data
 - Performed feature engineering and EDA
@@ -17,5 +24,4 @@ This ML project predicts whether a movie will be a Blockbuster, Hit, Average, or
 ## 🔧 Tools Used:
 - Python, Pandas, Scikit-learn, Matplotlib, GridSearchCV
 
-## 💡 Future Work:
-- Streamlit-based model deployment (Coming soon!)
+
