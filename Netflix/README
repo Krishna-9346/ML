@@ -1,0 +1,30 @@
+# Netflix Recommendation System 🎬
+
+This project is a mini Netflix-style recommendation engine developed in three stages:
+
+## 🔹 Level 1: Content-Based Filtering
+- Uses movie metadata like genre and title
+- Calculates cosine similarity
+- Recommends similar movies based on input movie name
+
+## 🔹 Level 2: Modular Approach
+- Refactored the content-based recommender into reusable Python functions
+- Allows better structure, readability, and testing
+
+## 🔹 Final Project: End-to-End Recommender
+- Accepts user input (movie + genre optional)
+- Generates unseen movie recommendations
+- Includes rating distribution plots
+- Shows similar users' favorite genres and movies
+
+## 📌 Tools Used:
+- Python, pandas, numpy
+- Scikit-learn, matplotlib, seaborn
+
+## 💡 How to Use:
+- Run each notebook step by step
+- Try inputting different movie names
+- See personalized recommendations and visualizations
+
+---
+
